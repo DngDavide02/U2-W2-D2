@@ -174,7 +174,7 @@
           ></button>
         </div>
       </div>
-      <div class="row collapse" id="collapse2"">
+      <div class="row collapse" id="collapse2">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card mt-4 shadow" style="width: 100%">
             <img
@@ -269,8 +269,20 @@
     </div>
     <!-- offerta del giorno -->
     <div class="container">
-      <h3 class="mt-4">Offerta del giorno</h3>
-      <div class="row mt-3">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+          <h3 class="mt-4">Offerta del giorno</h3>
+          <button
+            class="btn btn-primary bi bi-chevron-down"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse3"
+            aria-expanded="false"
+            aria-controls="collapse3"
+          ></button>
+        </div>
+      </div>
+      <div class="row mt-3 collapse" id="collapse3">
         <div class="col-7">
           <img
             src="https://plus.unsplash.com/premium_photo-1677494867836-3f56b1261bc5?q=80&w=1708&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -290,8 +302,20 @@
 
     <!-- last minute -->
     <div class="container">
-      <h3 class="mt-4">Last Minute</h3>
       <div class="row">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+          <h3 class="mt-4">Last Minute</h3>
+          <button
+            class="btn btn-primary bi bi-chevron-down"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse4"
+            aria-expanded="false"
+            aria-controls="collapse4"
+          ></button>
+        </div>
+      </div>
+      <div class="row collapse" id="collapse4">
         <div class="col-6 col-md-4 col-lg-4 mt-4">
           <img
             src="https://plus.unsplash.com/premium_photo-1676667573062-9f8a58721c29?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -389,6 +413,47 @@
       </div>
     </div>
 
+    <!-- Button trigger modal -->
+    <div class="text-center mb-5 mt-5">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Invia i tuoi dati per ricevere preventivi</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Inserisci i tuoi dati</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleInputText" aria-describedby="text" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" />
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                <label class="form-check-label" for="exampleCheck1">Acconsento al trattamento dei miei dati</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Invia</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- footer -->
     <div class="bg-dark p-5">
       <div class="container text-center text-white">
@@ -407,19 +472,40 @@
       const htmlEl = document.documentElement;
       const container = document.querySelector(".container.bg-light");
 
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        htmlEl.setAttribute("data-bs-theme", savedTheme);
+        if (savedTheme === "dark") {
+          container.classList.add("bg-dark", "text-white");
+          container.classList.remove("bg-light");
+          toggleBtn.textContent = "🌞";
+        } else {
+          container.classList.add("bg-light");
+          container.classList.remove("bg-dark", "text-white");
+          toggleBtn.textContent = "🌙";
+        }
+      }
+
       toggleBtn.addEventListener("click", () => {
+        console.log("Button clicked");
         const currentTheme = htmlEl.getAttribute("data-bs-theme");
+        console.log("Current theme:", currentTheme);
         const newTheme = currentTheme === "light" ? "dark" : "light";
         htmlEl.setAttribute("data-bs-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        console.log("New theme set to:", newTheme);
 
         if (newTheme === "dark") {
           container.classList.add("bg-dark", "text-white");
           container.classList.remove("bg-light");
+          console.log("Dark theme applied");
         } else {
           container.classList.add("bg-light");
           container.classList.remove("bg-dark", "text-white");
+          console.log("Light theme applied");
         }
         toggleBtn.textContent = newTheme === "dark" ? "🌞" : "🌙";
+        console.log("Button text updated to:", toggleBtn.textContent);
       });
     </script>
   </body>
