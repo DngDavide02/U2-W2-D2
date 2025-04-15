@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,7 +20,7 @@
   </head>
   <body>
     <!-- nav -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary position-sticky top-0 z-3">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="./assets/img/EPICODE_Travel-removebg-preview.png" alt="Bootstrap" width="50" height="50" />
@@ -55,6 +55,7 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
+            <button class="btn btn-outline-primary me-2" id="toggleThemeBtn">🌙</button>
             <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno" aria-label="Search" />
             <button class="btn btn-outline-primary" type="submit">Cerca</button>
           </form>
@@ -94,10 +95,10 @@
               class="card-img-top img-fluid"
               alt="..."
             />
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Deserto Sahara</h5>
               <p class="card-text">Il più grande deserto caldo del mondo, con sabbia, rocce e oasi.</p>
-              <a href="#" class="btn btn-primary">Prenota</a>
+              <a href="#" class="btn btn-primary mt-auto">Prenota</a>
             </div>
           </div>
         </div>
@@ -108,10 +109,10 @@
               class="card-img-top img-fluid"
               alt="..."
             />
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Canada</h5>
               <p class="card-text">Il Canada ha milioni di laghi, tra cui alcuni tra i più grandi del mondo.</p>
-              <a href="#" class="btn btn-primary">Prenota</a>
+              <a href="#" class="btn btn-primary mt-auto">Prenota</a>
             </div>
           </div>
         </div>
@@ -122,10 +123,10 @@
               class="card-img-top img-fluid"
               alt="..."
             />
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Africa</h5>
               <p class="card-text">Continente vasto e vario, con deserti, savane, foreste e molte culture diverse.</p>
-              <a href="#" class="btn btn-primary">Prenota</a>
+              <a href="#" class="btn btn-primary mt-auto">Prenota</a>
             </div>
           </div>
         </div>
@@ -136,10 +137,10 @@
               class="card-img-top img-fluid"
               alt="..."
             />
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Madagascar</h5>
               <p class="card-text">: Isola africana con animali unici al mondo, come i lemuri, e grande biodiversità.</p>
-              <a href="#" class="btn btn-primary">Prenota</a>
+              <a href="#" class="btn btn-primary mt-auto">Prenota</a>
             </div>
           </div>
         </div>
@@ -160,10 +161,10 @@
               alt="..."
             />
             <span class="position-absolute top-0 end-0 badge badge text-bg-danger mt-2 me-2">HOT</span>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Bora Bora</h5>
               <p class="card-text">Isola tropicale con laguna turchese e bungalow sull’acqua.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary mt-auto">Go Summer</a>
             </div>
           </div>
         </div>
@@ -175,10 +176,10 @@
               alt="..."
             />
             <span class="position-absolute top-0 end-0 badge badge text-bg-danger mt-2 me-2">HOT</span>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Maldive</h5>
               <p class="card-text">Atolli corallini nell’Oceano Indiano, famosi per spiagge bianche e acqua cristallina.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary mt-auto">Go Summer</a>
             </div>
           </div>
         </div>
@@ -190,10 +191,10 @@
               alt="..."
             />
             <span class="position-absolute top-0 end-0 badge badge text-bg-danger mt-2 me-2">HOT</span>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Maui (Hawaii)</h5>
               <p class="card-text">Isola vulcanica con spiagge dorate, surf e natura lussureggiante.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary mt-auto">Go Summer</a>
             </div>
           </div>
         </div>
@@ -205,10 +206,10 @@
               alt="..."
             />
             <span class="position-absolute top-0 end-0 badge badge text-bg-danger mt-2 me-2">HOT</span>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Phuket (Thailandia)</h5>
               <p class="card-text">Spiagge tropicali, scogliere mozzafiato e vita notturna vivace.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary mt-auto">Go Summer</a>
             </div>
           </div>
         </div>
@@ -220,10 +221,10 @@
               alt="..."
             />
             <span class="position-absolute top-0 end-0 badge badge text-bg-danger mt-2 me-2">HOT</span>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Zanzibar (Tanzania)</h5>
               <p class="card-text">Isola africana con mare turchese, spezie e cultura swahili.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary mt-auto">Go Summer</a>
             </div>
           </div>
         </div>
@@ -235,10 +236,10 @@
               alt="..."
             />
             <span class="position-absolute top-0 end-0 badge badge text-bg-danger mt-2 me-2">HOT</span>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <h5 class="card-title">Seychelles</h5>
               <p class="card-text">Arcipelago nell’Oceano Indiano con spiagge di sabbia rosa e acque limpide.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="#" class="btn btn-primary mt-auto">Go Summer</a>
             </div>
           </div>
         </div>
@@ -379,5 +380,25 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const toggleBtn = document.getElementById("toggleThemeBtn");
+      const htmlEl = document.documentElement;
+      const container = document.querySelector(".container.bg-light");
+
+      toggleBtn.addEventListener("click", () => {
+        const currentTheme = htmlEl.getAttribute("data-bs-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        htmlEl.setAttribute("data-bs-theme", newTheme);
+
+        if (newTheme === "dark") {
+          container.classList.add("bg-dark", "text-white");
+          container.classList.remove("bg-light");
+        } else {
+          container.classList.add("bg-light");
+          container.classList.remove("bg-dark", "text-white");
+        }
+        toggleBtn.textContent = newTheme === "dark" ? "🌞" : "🌙";
+      });
+    </script>
   </body>
 </html>
